@@ -1,75 +1,127 @@
 <html>
-//Custom function to populate a modal. This could be expanded on to even add a destination parameter in order to use seperate modals (e.g. function videoModal(destination, source) and replace #myModal2 with the `destination` parameter).
-function videoModal(source) {
-  $("#myModal2 .modal-body").html($("video#player").clone());
-  //Add your second source:
-  $("#myModal2 video#player > source").attr("src", source);
-  $("#myModal2 .modal-body video#player").css("display", "block");
-}
+  <head>
+    <title>Full player example</title>
+    <!-- Uncomment the following meta tag if you have issues rendering this page on an intranet or local site. -->    
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"/> -->
 
-$(document).ready(function() {
-  //On init, save current loaded state of modal
-  let modalInit = $("#myModal2 .modal-body").html();
+    <script type="text/javascript">
+        window.videos = 0;
+        function createVideo (src) {
+            var container = document.createElement('div'),
+                    video = document.createElement('video'),
+                    buttonContainer = document.createElement('div'),
+                    faster = document.createElement('button'),
+                    forward = document.createElement('button'),
+                    normal = document.createElement('button'),
+                    playPause = document.createElement('button'),
+                    restart = document.createElement('button'),
+                    rewind = document.createElement('button'),
+                    slower = document.createElement('button'),
+                    error = document.createElement('div'),
+                    showError = function (message) {
+                        error.textContent = message;
+                        setTimeout(function () {
+                            error.textContent = '';
+                        }, 5000);
+                    };
 
-  //On interaction with a control
-  $("body").on("click", "button#trailer", function() {
-    //Populate modal
-    videoModal("https://www.w3schools.com/tags/movie.mp4");
-  });
+            ++window.videos;
 
-  $("body").on("click", "button#movieNoads", function() {
-    //Populate modal
-    videoModal("https://www.w3schools.com/html/mov_bbb.mp4")
-  });
+            document.body.appendChild(container);
+            container.id = 'container-' + window.videos;
 
-  //Reset modal on close
-  $("#myModal2").on('hidden.bs.modal', function(e) {
-    $("#myModal2 .modal-body").html(modalInit);
-  });
-});
+            container.appendChild(video);
+            video.id = 'video-' + window.videos;
+            video.autoplay = true;
+            video.controls = true;
+            video.loop = true;
+            video.src = src;
+            video.load();
 
-video#player {
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-}
+            video.addEventListener('error', function (err) {
+                showError(err);
+            }, true);
 
+            container.appendChild(buttonContainer);
+            buttonContainer.id = 'buttonContainer-' + window.videos;
 
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- Modal -->
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+            buttonContainer.appendChild(restart);
+            buttonContainer.appendChild(slower);
+            buttonContainer.appendChild(rewind);
+            buttonContainer.appendChild(playPause);
+            buttonContainer.appendChild(forward);
+            buttonContainer.appendChild(faster);
+            buttonContainer.appendChild(normal);
 
-<video id="player" controls autoplay loop>
-  <source src="" type="video/mp4">
-</video>
+            faster.id = 'faster-' + window.videos;
+            faster.textContent = '+';
+            faster.title = 'Faster playback button';
+            faster.addEventListener('click', function () {
+                video.playbackRate += .25;
+            }, false);
 
-<!-- Button trigger modal -->
-<button type="button" id="trailer" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
-  Trailer
-</button>
+            forward.id = 'forward-' + window.videos;
+            forward.textContent = '>>';
+            forward.title = 'Forward button';
+            forward.addEventListener('click', function () {
+                video.currentTime += 10;
+            }, false);
 
-<button type="button" id="movieNoads" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
-  Movie
-</button>
+            normal.id = 'normal-' + window.videos;
+            normal.textContent = '=';
+            normal.title = 'Reset playback rate button';
+            normal.addEventListener('click', function () {
+                video.playbackRate = 1;
+            }, false);
+
+            playPause.id = 'playPause-' + window.videos;
+            playPause.textContent = '||';
+            playPause.title = 'Play button';
+            playPause.addEventListener('click', function (evt) {
+                button = evt.target;
+                if (video.paused) {
+                    video.play();
+                    button.textContent = '||';
+                }
+                else {
+                    video.pause();
+                    button.textContent = '>';
+                }
+            }, false);
+
+            restart.id = 'restart-' + window.videos;
+            restart.textContent = '[]';
+            restart.title = 'Restart button';
+            restart.addEventListener('click', function () {
+                video.currentTime = 0;
+            }, false);
+
+            rewind.id = 'rewind-' + window.videos;
+            rewind.textContent = '<<';
+            rewind.title = 'Rewind button';
+            rewind.addEventListener('click', function () {
+                video.currentTime -= 10;
+            }, false);
+
+            slower.id = 'slower-' + window.videos;
+            slower.textContent = '-';
+            slower.title = 'Slower playback button';
+            slower.addEventListener('click', function () {
+                video.playbackRate -= .25;
+            }, false);
+
+            container.appendChild(error);
+            error.id = 'error-' + window.videos;
+            error.title = 'Error message area';
+            error.style.color = 'red';
+        };
+
+        function init() {
+            createVideo('/lib/exe/fetch.php?media=experiment_log_books:sig0700.mp4');
+            createVideo('/lib/exe/fetch.php?media=experiment_log_books:sig0700.mp4');
+        }
+    </script>
+
+    </head>
+    <body onload="init();"></body>
 </html>
