@@ -1,3 +1,7 @@
+<?php
+$data = file_get_contents($vid);
+echo json_encode(array('filecontent' => $data));
+?>
 
 <title>PHOTOCALL.TV - Streaming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
