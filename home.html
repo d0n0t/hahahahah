@@ -6,30 +6,6 @@
 
     <a href="player.php?vid=help.m3u8" target="_blank">Episode 1</a>
      <a href="player.php?vid=help.m3u8" target="_blank">Episode 2</a>
-    <a href="player.php?vid=help.m3u8" id="Link" onclick="Link()">Link</a>
-  
-<script>
-function Link() {
-
-    jQuery.ajax({
-        url: "",
-        type: "POST",
-        data:  {
-                // more fields can be added here
-        },
-        dataType: 'json',
-        success: function(return){              
-            // process success 
-            window.location.href = return.url
-        },
-        error: function(err) {
-            // Process failure
-        }           
-});
-
-}
-</script>
-  
   </head>
     <body onload="init();"></body>
 </html>
