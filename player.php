@@ -1,3 +1,6 @@
+<?php
+json_encode($url)
+  ?>
 <title>PHOTOCALL.TV - Streaming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="http://www.espai.jazztel.es/favicon2.ico" type="image/x-icon" />
