@@ -1,9 +1,6 @@
-<?php
-$data = file_get_contents($vid);
-echo json_encode(array('vid' => $data));
-?>
 
-<title>PHOTOCALL.TV - Streaming</title>
+
+<title>brr</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="http://www.espai.jazztel.es/favicon2.ico" type="image/x-icon" />
 <body style="margin:0">
