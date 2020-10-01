@@ -1,5 +1,5 @@
 <?php
-json_encode($url)
+json_encode($vid)
   ?>
 <title>PHOTOCALL.TV - Streaming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,8 @@ json_encode($url)
 <div id="player"></div>
 <script>var player = new Clappr.Player({
 source: "<?php echo $_GET['vid'] ?>",
-plugins: [LevelSelector, ChromecastPlugin],
+    
+    plugins: [LevelSelector, ChromecastPlugin],
 parentId: "#player",
 height: "100%",
 width: "100%",
