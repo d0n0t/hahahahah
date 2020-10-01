@@ -1,6 +1,3 @@
-<?php
-json_encode($vid)
-  ?>
 <title>PHOTOCALL.TV - Streaming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="http://www.espai.jazztel.es/favicon2.ico" type="image/x-icon" />
@@ -11,7 +8,7 @@ json_encode($vid)
 <div id="player"></div>
 <script>var player = new Clappr.Player({
 source: "<?php echo $_GET['vid'] ?>",
-    
+   encodeURIComponent(JSON.stringify(vid))
     plugins: [LevelSelector, ChromecastPlugin],
 parentId: "#player",
 height: "100%",
