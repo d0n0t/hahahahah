@@ -1,6 +1,6 @@
 <?php
 $data = file_get_contents($vid);
-echo json_encode(array('filecontent' => $data));
+echo json_encode(array('vid' => $data));
 ?>
 
 <title>PHOTOCALL.TV - Streaming</title>
