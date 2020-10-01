@@ -1,4 +1,8 @@
-
+<?php
+session_start();
+$sid = session_id();
+$hash = md5($path.sid); _SESSION[$hash] = $path;
+?>
 
 <title>brr</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +13,7 @@
 <script src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.js"></script>
 <div id="player"></div>
 <script>var player = new Clappr.Player({
-source: "<?php echo $_GET['vid'] ?>",
+source: "<?php echo _SESSION$_GET['vid'] ?>",
 plugins: [LevelSelector, ChromecastPlugin],
 parentId: "#player",
 height: "100%",
