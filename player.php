@@ -12,7 +12,7 @@ plugins: [LevelSelector, ChromecastPlugin],
 parentId: "#player",
 height: "100%",
 width: "100%",
-autoPlay: true,
+autoPlay: false,
 });
 </script>
-</body>
+</body> 
