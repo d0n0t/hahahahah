@@ -13,5 +13,25 @@ height: "100%",
 width: "100%",
 autoPlay: true,
 });
-</script>
+
+  function base64_url_encode($vid)
+
+{
+
+return strtr(base64_encode($vid), '+/=', '-_,');
+
+}
+
+base64_encode -Encodes data  with MIME base64
+  
+function base64_url_decode($vid)
+
+{
+
+return base64_decode(strtr($vid, '-_,', '+/='));
+
+}
+
+base64_decode -Decodes data encoded with MIME base64.
+  </script>
 </body>
