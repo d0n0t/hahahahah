@@ -5,7 +5,8 @@
 <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
 <script src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.js"></script>
 <div id="player"></div>
-<script>var player = new Clappr.Player({
+<script>
+  var player = new Clappr.Player({
 source: "<?php echo ['vid'] ?>",
 plugins: [LevelSelector, ChromecastPlugin],
 parentId: "#player",
