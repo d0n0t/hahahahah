@@ -6,13 +6,41 @@
 
     <a href="player.php?vid=help.m3u8" target="_blank" >Episode 1</a>
      <a href="player.php?vid=help.m3u8" target="_blank">Episode 2</a>
-  <a class="" data-value="player.php?vid=https://d3cs5y5559s57s.cloudfront.net/live/channelk.m3u8" href="javascript:void(0);" 
-           onclick="open('datavalue')">Channel K</a>
-  <script>
-function myFunction() {
-    document.getElementById("data-value").style.color = "red";
-}
-</script>
+  <a class="" data-value="player.php?vid=https://d3cs5y5559s57s.cloudfront.net/live/channelk.m3u8" href="javascript:void(0);">Channel K</a>
+>
+    var playerElement = document.getElementById("TeLaSe");
+                                var player = new Clappr.Player({
+                                    source: "",
+                                    //mimeType: 'application/x-mpegURL',
+                                    width: '100%',
+                                    height: 'calc(100vh - 100px)',
+                                    autoPlay: false,
+                                    watermark: "",
+                                    watermarkLink: "h",
+                                    position: 'bottom-right',
+                                    mediacontrol: {seekbar: "#00FF00", buttons: "#FFFFFF"},
+                                    mute: false,
+                                    gaAccount: "UA-69771681-1",
+                                    disableErrorScreen: true, // Disable the internal error screen plugin
+                                    plugins: [ChromecastPlugin,ErrorPlugin,LevelSelector,ClapprAds],
+                                    chromecast: {
+                                        appId: "9DFB77C0",
+                                        contentType: "video/m3u8",
+                                        media: {
+                                            type: ChromecastPlugin.None,
+                                            title: "IPTV",
+                                            subtitle: "IPTV Streaming Service"
+                                        }
+                                    },
+                                    errorPlugin: {
+                                        onRetry: function(e) {
+                                        }
+                                      },
+                                    disableVideoTagContextMenu: true,
+                                    playbackNotSupportedMessage: 'Your browser is not supported.'
+                                });
+                                player.attachTo(playerElement);
+                            </script>
   </head>
     <body onload="init();"></body>
 </html>
