@@ -7,7 +7,7 @@
 <script src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.js"></script>
 <div id="player"></div>
 <script>var player = new Clappr.Player({
-    source: window.atob(<?php echo "<?php echo $_GET['vid'] ?>".base64_encode($data['vid']); ?>),
+    source: <?php echo "<?php echo $_GET['vid'] ?>".base64_encode($data['vid']); ?>,
     parentId: '#player',
     mimeType: 'application/x-mpegURL',
     plugins: [DashShakaPlayback,LevelSelector,ChromecastPlugin],
