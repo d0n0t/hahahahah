@@ -7,12 +7,22 @@
 <script src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.js"></script>
 <div id="player"></div>
 <script>var player = new Clappr.Player({
-source: "<?php echo $_GET['vid'] ?>",
-plugins: [LevelSelector, ChromecastPlugin],
-parentId: "#player",
-height: "100%",
-width: "100%",
-autoPlay: false,
+    source: window.atob(<?php echo "<?php echo $_GET['vid'] ?>". base64_encode($data['vid']) . '"'; ?>),
+    parentId: '#player',
+    mimeType: 'application/x-mpegURL',
+    plugins: [DashShakaPlayback,LevelSelector,ChromecastPlugin],
+    levelSelectorConfig: {
+        title: 'Quality',
+        labels: {
+            2: 'High', // 500kbps
+            1: 'Med', // 240kbps
+            0: 'Low', // 120kbps
+        },
+        labelCallback: function(playbackLevel, customLabel) {
+            return customLabel + playbackLevel.level.height+'p'; // High 720p
+        }
+    }
 });
+</script>
 </script>
 </body> 
