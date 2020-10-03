@@ -1,1 +1,1 @@
-bvbv
+. init/updater.sh
