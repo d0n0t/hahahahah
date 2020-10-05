@@ -14,7 +14,7 @@ git clone https://github.com/${userName}/${repo}.git
 	cd ${repo}
 #updater
 echo " "
-echo "Updating your USERGE-X"
+echo "Updating"
 git pull https://github.com/d0n0t/hahahahah.git
 git diff
 git commit -m "."
