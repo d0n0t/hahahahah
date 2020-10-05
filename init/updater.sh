@@ -1,3 +1,4 @@
+
 # Get username of user
 echo -n "Enter your GitHub username: "
 read userName
