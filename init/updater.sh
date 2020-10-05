@@ -7,15 +7,13 @@ echo -n "Enter your GitHub repo: "
 read repo
 echo " "
 #selection
+
+echo " "
+echo "Updating"
 repo="${repo}"
 
 rm -rf ${repo}
-git clone https://github.com/${userName}/${repo}.git
-	cd ${repo}
-#updater
-echo " "
-echo "Updating"
-git pull https://github.com/d0n0t/hahahahah.git
+git pull https://github.com/${userName}/${repo}.git
 git diff
 git commit -m "."
 git push
