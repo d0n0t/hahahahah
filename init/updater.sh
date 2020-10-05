@@ -13,6 +13,7 @@ echo "Updating"
 repo="${repo}"
 
 rm -rf ${repo}
+git init
 git pull https://github.com/${userName}/${repo}.git
 git diff
 git commit -m "."
