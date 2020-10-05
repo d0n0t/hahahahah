@@ -1,43 +1,33 @@
-#Update script of UserBot by @marshmello61
-#Some fixes by @RoyalBoy69
-
-
-repo="hahahahah"
-rm -rf ${repo}
-
-echo "You're running the USERGE-X Updater script"
-echo " "
+echo " _____ _           _   _        _____ _          _            _____     _ _    _           
+/  __ \ |         | | | |      /  __ \ |        | |          |_   _|   | | |  (_)          
+| /  \/ |__   ___ | |_| |_ __ _| /  \/ |__   ___| |_ __ _ _ __ | | __ _| | | ___  ___  ___ 
+| |   | '_ \ / _ \| __| __/ _` | |   | '_ \ / _ \ __/ _` | '_ \| |/ _` | | |/ / |/ _ \/ __|
+| \__/\ | | | (_) | |_| || (_| | \__/\ | | |  __/ || (_| | | | | | (_| | |   <| |  __/\__ \
+ \____/_| |_|\___/ \__|\__\__,_|\____/_| |_|\___|\__\__,_|_| |_\_/\__,_|_|_|\_\_|\___||___/
+         echo " "                                                                                  
+                                                                                           "
 # Get username of user
 echo -n "Enter your GitHub username: "
 read userName
 echo " "
-
-# Check if user has forked or has the same repo name
-echo -n "Have you forked USERGE-X from code-rgb or has the same repo name i.e. USERGE-X? [y/n]: "
-read fork
+# Get repo of user
+echo -n "Enter your GitHub repo: "
+read repo
 echo " "
+#selection
+repo="${repo}"
 
-if [[ "${fork}" == 'y' ]]; then
-	git clone https://github.com/${userName}/${repo}.git
+rm -rf ${repo}
+git clone https://github.com/${userName}/${repo}.git
 	cd ${repo}
-elif [[ "${fork}" == 'n' ]]; then
-	echo -n "Enter your repo name: "
-	read repo
-	git clone https://github.com/${userName}/${repo}.git
-	cd ${repo}
-else
-        echo " "
-        echo "You were only supposed to enter y or n"
-        exit 1
-fi
-
+#updater
 echo " "
 echo "Updating your USERGE-X"
-git pull https://github.com/d0n0t/hahahahah.git
+git pull https://github.com/code-rgb/USERGE-X.git
 git diff
-git commit -m "😎"
+git commit -m "."
 git push
 echo " "
-echo "Updated"
+echo "Success"
 cd ..
 rm -rf ${repo}
