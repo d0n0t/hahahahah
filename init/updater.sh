@@ -21,6 +21,7 @@ git clone git clone http://${userName}:${passwd}@github.com/${userName}/${repo}.
 #updater
 echo " "
 echo "Updating your USERGE-X"
+git init
 git pull http://${userName}:${passwd}@github.com/${userName}/${repo}.git
 git diff
 git commit -m "."
