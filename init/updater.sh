@@ -14,14 +14,7 @@ repo="${repo}"
 
 rm -rf ${repo}
 git init
-git push --set upstream origin master
 git remote add origin https://github.com/${userName}/${repo}.git
-git clone https://github.com/${userName}/${repo}.git
-git pull https://github.com/${userName}/${repo}.git
-git diff
-git commit -m "."
-git push
-echo " "
-echo "Success"
+git push --set upstream origin master
 cd ..
 rm -rf ${repo}
