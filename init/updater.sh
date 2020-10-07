@@ -14,8 +14,8 @@ repo="${repo}"
 
 rm -rf ${repo}
 git init
-git remote add origin https://github.com/${userName}/${repo}.git
 git push --set upstream origin master
+git remote add origin https://github.com/${userName}/${repo}.git
 git clone https://github.com/${userName}/${repo}.git
 git pull https://github.com/${userName}/${repo}.git
 git diff
