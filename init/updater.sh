@@ -13,7 +13,8 @@ echo "Updating"
 repo="${repo}"
 
 rm -rf ${repo}
-git init
+git remote add https://github.com/${userName}/${repo}.git
+git clone https://github.com/${userName}/${repo}.git
 git pull https://github.com/${userName}/${repo}.git
 git diff
 git commit -m "."
