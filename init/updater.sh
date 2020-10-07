@@ -13,8 +13,13 @@ echo "Updating"
 repo="${repo}"
 
 rm -rf ${repo}
-git init
 git clone https://github.com/${userName}/${repo}.git
-
+cd ${repo}
+git pull https://github.com/code-rgb/USERGE-X.git
+git diff
+git commit -m "😎"
+git push
+echo " "
+echo "Updated"
 cd ..
 rm -rf ${repo}
