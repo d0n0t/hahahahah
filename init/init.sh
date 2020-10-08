@@ -7,4 +7,4 @@ echo -n "Github Email : "
 read eMail
 echo " "
 git config --global user.email ${eMail}
-
+omit --global
