@@ -13,8 +13,6 @@ echo "Updating"
 repo="${repo}"
 
 rm -rf ${repo}
-git clone https://github.com/${userName}/${repo}.git
-cd ${repo}
 git pull https://github.com/${userName}/${repo}.git
 git diff
 git commit -m "😎"
