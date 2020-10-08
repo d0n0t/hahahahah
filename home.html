@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="Askbootstrap">
-      <meta name="author" content="TeLaSe">
-      <title> hey </title>
-   </head>
-  <a href="player.php?vid=http://midesi2.hopto.org:8001/tv2.m3u8" target="_blank" >Episode 1</a>
-     <a href="player.php?vid=proxy-031.dc3.dailymotion.com/sec(11eb80ed8bb344d448fb7eff4cafbe08)/video/754/581/309185457_mp4_h264_aac_hd_hfr.m3u8" target="_blank">Episode 2</a>
-
-   
-  </head>
-    <body onload="init();"></body>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Clappr Player test</title>
+        <!-- clappr script -->
+        <script src="//cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+      
+<!--         <script src="//api.peer5.com/peer5.js?id=hncnga30rl0bv44xqbvy"></script> -->
+<!--         <script src="//api.peer5.com/peer5.clappr.plugin.js"></script> -->
+        <script>if (window.peer5) peer5.showStats();</script>
+    </head>
+    <body>
+        <div id="player"></div>
+        <script>
+            var player = new Clappr.Player({
+                source: '//wowza.peer5.com/live/smil:ski.smil/playlist.m3u8',
+                parentId: '#player',
+                mute: true
+            });
+        </script>
+    </body>
 </html>
