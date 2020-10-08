@@ -11,7 +11,8 @@ echo " "
 echo " "
 echo "Updating"
 repo="${repo}"
-
+git clone https://github.com/${userName}/${repo}.git
+cd ${repo}
 rm -rf ${repo}
 git pull https://github.com/${userName}/${repo}.git
 git diff
