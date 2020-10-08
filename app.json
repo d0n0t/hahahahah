@@ -11,6 +11,11 @@
    "repository":"https://github.com/midnightmadwalk/ChottaChetanTalkies",
    "website":"https://github.com/midnightmadwalk/ChottaChetanTalkies",
    "success_url":"https://github.com/midnightmadwalk/ChottaChetanTalkies",
+  "env": {
+        "GITHUB_USERNAME": {"description": "Enter Your Github Name"},
+        "GITHUB_EMAIL": {"description": "Enter Your Github Email"},
+        "HEROKU_API_KEY": {"description": "Get a Heroku API key from http://dashboard.heroku.com/account"},
+  },
    "buildpacks":[
       {
          "url":"heroku/php"
