@@ -8,10 +8,11 @@ $file = $token;
   $file_size = filesize($file);
   $file_pointer = fopen($file, "rb");
   $data = fread($file_pointer, $file_size);
-  header("Content-type: video/mp4");
+  header("Content-type: application/x-mpegURL");
 
   echo $data;
 }
 else {
   echo "Error: File Does not exists";
 }
+?>
