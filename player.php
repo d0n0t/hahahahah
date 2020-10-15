@@ -12,7 +12,8 @@ if(isset($_SESSION['setToken']))
 else
 {
     session_regenerate_id(true);
-
+}
+header("Location: access.php?id=".$prev."&vid=".$token);
 <title>Streaming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="http://www.espai.jazztel.es/favicon2.ico" type="image/x-icon" />
