@@ -1,3 +1,18 @@
+<?php
+session_start();
+$token = $_GET['vid'];
+$prev= session_id();
+if(isset($_SESSION['setToken']))
+{
+   unset($_SESSION['setToken']);
+   $token = openssl_decrypt($token, "aes128", session_id());
+  session_regenerate_id();
+    $token = openssl_encrypt($token, "aes128", $prev.session_id());
+}
+else
+{
+    session_regenerate_id(true);
+
 <title>Streaming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="http://www.espai.jazztel.es/favicon2.ico" type="image/x-icon" />
