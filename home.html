@@ -2,9 +2,10 @@
 session_start();
 session_regenerate_id();
 $_SSEION['setToken'] = true;
-$token = "vid.mp4";
+$token = "https://abp-i.akamaihd.net/hls/live/765531/abpmajha/master.m3u8";
 $token_encrypted = openssl_encrypt($token, "aes128", session_id());
 ?>
 <video width="320" height="240" controls="">
   <source src="player.php?vid=<?php echo $token_encrypted; ?>">
 </source></video>
+<
