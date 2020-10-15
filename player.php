@@ -1,15 +1,3 @@
-f (!empty($_GET['token'])) {
-    switch ($_GET['token']) {
-        case "1":
-            header("Content-type: application/x-mpegURL");
-            echo file_get_contents('<?php echo $_GET['vid'] ?>');
-            break;
-    }
-    die();
-}
-
-?>
-
 <title>Streaming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="http://www.espai.jazztel.es/favicon2.ico" type="image/x-icon" />
