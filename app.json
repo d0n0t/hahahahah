@@ -16,7 +16,7 @@
       {
          "url":"heroku/php"
       }
-   ],
+   ,
    "formation":{
       "web":{
          "quantity":1,
