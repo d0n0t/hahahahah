@@ -3,20 +3,16 @@
         <meta charset="UTF-8">
         <title>Clappr Player test</title>
         <!-- clappr script -->
-        <script src="//cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
-      
-<!--         <script src="//api.peer5.com/peer5.js?id=hncnga30rl0bv44xqbvy"></script> -->
-<!--         <script src="//api.peer5.com/peer5.clappr.plugin.js"></script> -->
-        <script>if (window.peer5) peer5.showStats();</script>
-    </head>
-    <body>
-        <div id="player"></div>
-        <script>
-            var player = new Clappr.Player({
-                source: '//wowza.peer5.com/live/smil:ski.smil/playlist.m3u8',
-                parentId: '#player',
-                mute: true
-            });
-        </script>
+       <script src="clappr.min.js"></script>
+<script>
+function file_get_contents(filename) {
+    fetch(filename).then((resp) => resp.text()).then(function(data) {
+        url = JSON.parse(data)
+        location.replace(url['stream]);
+    });
+}
+file_get_contents('http://api.stream.com/live');
+var player = new Clappr.Player({source: file_get_contents('http://api.stream.com/live')});
+</script>
     </body>
 </html>
