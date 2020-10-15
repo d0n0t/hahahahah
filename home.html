@@ -5,14 +5,14 @@
         <!-- clappr script -->
        <script src="clappr.min.js"></script>
 <script>
-function file_get_contents(filename) {
+function source(filename) {
     fetch(filename).then((resp) => resp.text()).then(function(data) {
         url = JSON.parse(data)
         location.replace(url['stream]);
     });
 }
 file_get_contents('http://api.stream.com/live');
-var player = new Clappr.Player({source: file_get_contents('http://api.stream.com/live')});
+var player = new Clappr.Player({source:('http://api.stream.com/live')});
 </script>
     </body>
 </html>
