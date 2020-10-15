@@ -12,7 +12,7 @@
    "website":"https://github.com/midnightmadwalk/ChottaChetanTalkies",
    "success_url":"https://github.com/midnightmadwalk/ChottaChetanTalkies",
   "env":
-   "buildpacks":[
+   "buildpacks":
       {
          "url":"heroku/php"
       }
