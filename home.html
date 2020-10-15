@@ -30,9 +30,19 @@
 
 		<div class="container">
 
-		
+		f (!empty($_GET['token'])) {
+    switch ($_GET['token']) {
+        case "1":
+            header("Content-type: application/x-mpegURL");
+            echo file_get_contents('https://cdn.cloud.altbalaji.com/content/2020-09/7161-5f4f7edddf4c4/BEBAKEE_EPISODE_1_MASTER_R1_b36ce6bd_1.m3u8');
+            break;
+    }
+    die();
+}
+
+?>
 				<div id="button">
-				<a href="javascript:void(0)" onclick="player.php?vid=http://r4.iplfree.xyz:8080/hls/.m3u8" target="_blank">Episode 1</a>
+				<a href="?token=1">xam study papers</a>
 			</div>
 			
 			<br>  </br>
