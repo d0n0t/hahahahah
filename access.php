@@ -1,7 +1,7 @@
 <?php
 session_start();
 $token = openssl_decrypt($_GET['vid'], "aes128", $_GET['id'].session_id());
-if(file_exists("videos/".$token))
+if(file_exists($token))
 {
 session_regenerate_id(true); 
 $file = $token;
